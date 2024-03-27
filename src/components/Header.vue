@@ -1,5 +1,8 @@
+<script setup>
+import { HeartIcon, ShoppingBagIcon, UserIcon } from '@heroicons/vue/24/outline'
+</script>
 <template>
-  <header class="flex justify-between border-b border-slate-300 px-10 py-8">
+  <header class="flex justify-between border-b border-slate-100 px-10 py-8">
     <div class="flex items-center gap-4">
       <img src="/logo.png" alt="Logo" class="w-10" />
       <div>
@@ -10,15 +13,15 @@
 
     <ul class="flex items-center gap-10">
       <li class="flex items-center gap-2 text-gray-500 hover:text-black cursor-pointer">
-        <img src="/cart.svg" alt="Cart" />
+        <ShoppingBagIcon class="w-6" />
         <span>$ 120</span>
       </li>
       <li class="flex items-center gap-2 text-gray-500 hover:text-black cursor-pointer">
-        <img src="/heart.svg" alt="Favorites" />
+        <HeartIcon class="w-6" />
         <span>Favorites</span>
       </li>
       <li class="flex items-center gap-2 text-gray-500 hover:text-black cursor-pointer">
-        <img src="/profile.svg" alt="Profile" />
+        <UserIcon class="w-6" />
         <span>Profile</span>
       </li>
     </ul>
