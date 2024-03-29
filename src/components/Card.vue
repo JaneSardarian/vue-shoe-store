@@ -2,7 +2,8 @@
 import { HeartIcon, PlusIcon, CheckIcon } from '@heroicons/vue/24/outline'
 import { HeartIcon as HeartFill } from '@heroicons/vue/24/solid'
 
-defineProps({
+const props = defineProps({
+  id: Number,
   imageUrl: String,
   title: String,
   price: Number,
@@ -22,7 +23,7 @@ defineProps({
     </span>
 
     <img :src="imageUrl" alt="shoes" />
-    <p class="mt-2">{{ title }}</p>
+    <p class="mt-2 text-sm uppercase">{{ title }}</p>
     <div class="flex flex-col mt-5">
       <div class="flex justify-between">
         <b>$ {{ price }}</b>
