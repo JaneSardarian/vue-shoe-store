@@ -4,7 +4,7 @@ import { XMarkIcon } from '@heroicons/vue/24/outline'
 
 <template>
   <div class="flex flex-col-2 border border-zinc-100 rounded-md">
-    <img class="w-32 h-24" src="/sneakers/shoes-1.jpg" alt="shoes" />
+    <img class="w-32 h-24" src="/pumps/shoes-1.jpg" alt="shoes" />
     <div class="flex flex-cols-2 gap-4">
       <div class="ml-4">
         <p class="text-sm uppercase mt-1 mb-5">Avenue pumps in patent leather</p>
