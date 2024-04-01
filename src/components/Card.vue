@@ -4,7 +4,7 @@ import { HeartIcon as HeartFill } from '@heroicons/vue/24/solid'
 
 const props = defineProps({
   id: Number,
-  imageUrl: String,
+  image: String,
   title: String,
   price: Number,
   isFavorite: Boolean,
@@ -15,14 +15,14 @@ const props = defineProps({
 </script>
 <template>
   <div
-    class="relative bg-white border border-zinc-100 rounded-md p-4 hover:-translate-y-[2px] hover:shadow-lg transition duration-200"
+    class="relative bg-white border border-zinc-100 rounded-md p-4 hover:-translate-y-[10px] hover:shadow-lg transition duration-200"
   >
     <span @click="onClickFavorite">
       <HeartFill v-if="isFavorite" class="w-6 text-red-600 absolute top-6 right-6 cursor-pointer" />
       <HeartIcon v-else class="w-6 text-zinc-400 absolute top-6 right-6 cursor-pointer" />
     </span>
 
-    <img :src="imageUrl" alt="shoes" />
+    <img :src="image" alt="shoes" />
     <p class="mt-2 text-sm uppercase">{{ title }}</p>
     <div class="flex flex-col mt-5">
       <div class="flex justify-between">
