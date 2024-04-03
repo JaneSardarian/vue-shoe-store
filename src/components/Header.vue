@@ -1,36 +1,40 @@
 <script setup>
 import { HeartIcon, ShoppingBagIcon, UserIcon } from '@heroicons/vue/24/outline'
+import { inject } from 'vue'
 defineProps({
   totalPrice: Number
 })
-const emit = defineEmits(['openDrawer'])
+const { openDrawer } = inject('cart')
 </script>
 <template>
-  <header class="flex justify-between border-b border-zinc-100 px-10 py-8">
-    <div class="flex items-center gap-4">
-      <img src="/logo.png" alt="Logo" class="w-11" />
-      <div>
-        <h2 class="text-xl font-bold uppercase -ml-4 -mb-1">Must Have</h2>
-        <p class="text-zinc-400 -ml-4">Your perfect shoe collection</p>
+  <header
+    class="sticky top-0 z-10 flex justify-between border-b bg-white border-zinc-100 px-10 py-8"
+  >
+    <router-link to="/">
+      <div class="flex items-center gap-4">
+        <img src="/logo.png" alt="Logo" class="w-11" />
+        <div>
+          <h2 class="text-xl font-bold uppercase -ml-4 -mb-1">Must Have</h2>
+          <p class="text-zinc-400 -ml-4">Your perfect shoe collection</p>
+        </div>
       </div>
-    </div>
+    </router-link>
 
     <ul class="flex items-center gap-10">
       <li
-        @click="() => emit('openDrawer')"
+        @click="openDrawer"
         class="flex items-center gap-2 text-zinc-500 hover:text-black cursor-pointer"
       >
         <ShoppingBagIcon class="w-6" />
         <span>$ {{ totalPrice }}</span>
       </li>
-      <li class="flex items-center gap-2 text-zinc-500 hover:text-black cursor-pointer">
+      <router-link
+        to="/favorites"
+        class="flex items-center gap-2 text-zinc-500 hover:text-black cursor-pointer"
+      >
         <HeartIcon class="w-6" />
         <span>Favorites</span>
-      </li>
-      <li class="flex items-center gap-2 text-zinc-500 hover:text-black cursor-pointer">
-        <UserIcon class="w-6" />
-        <span>Profile</span>
-      </li>
+      </router-link>
     </ul>
   </header>
 </template>

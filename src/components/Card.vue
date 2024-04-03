@@ -17,7 +17,7 @@ const props = defineProps({
   <div
     class="relative bg-white border border-zinc-100 rounded-md p-4 hover:-translate-y-[10px] hover:shadow-lg transition duration-200"
   >
-    <span @click="onClickFavorite">
+    <span v-if="onClickFavorite" @click="onClickFavorite">
       <HeartFill v-if="isFavorite" class="w-6 text-red-600 absolute top-6 right-6 cursor-pointer" />
       <HeartIcon v-else class="w-6 text-zinc-400 absolute top-6 right-6 cursor-pointer" />
     </span>
@@ -28,7 +28,7 @@ const props = defineProps({
       <div class="flex justify-between">
         <b>$ {{ price }}</b>
         <div>
-          <span @click="onClickAdd">
+          <span v-if="onClickAdd" @click="onClickAdd">
             <CheckIcon v-if="isAddedToCart" class="w-6 text-green-600 cursor-pointer" />
             <PlusIcon v-else class="w-6 cursor-pointer" />
           </span>
